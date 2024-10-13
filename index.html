@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Operations</title>
+    <style>
+        body{
+            background-color: #c8ead9;
+        }
+        .heading{
+            text-align: center;
+            font-style: italic;
+            font-size: 40px;
+
+        }
+        .box-conatiner{
+            width:70%;
+            display:block;
+            margin:20px auto;
+            min-height: 100px;
+            padding:10px;
+            border-radius: 60px 0px 60px 0px;
+            font-style: italic;
+            font-size: 20px;
+            border: solid 3px #2a6f4d;
+            background-color:#8ed7b4;
+
+        }
+        .btn-action-conatiner{
+            width:70%;
+            display:flex;
+            justify-content: space-between;
+            margin:20px auto;
+        
+        }
+        .btn-action{
+            width:150px;
+            padding:8px 15px;
+            font-size: 15px;
+            border-radius:30px 0px 30px 0px;
+            border:2px solid black;
+            background-color: #1c4a34;
+            color:#fff;
+            cursor:pointer;
+        }
+        .btn-action:hover{
+            transition: 0.35s;
+            background-color: #0e251a;
+            box-shadow: 2px 2px 10px 1px #1c4a34;
+            cursor:grab;
+        }
+
+        @media screen and (max-width:768px)
+        {
+            .btn-action-conatiner{
+             flex-wrap:wrap;
+            justify-content: center;
+            width:70%;
+            display:flex;
+            justify-content: space-between;
+           
+           
+        }
+        .btn-action{
+            width:150px;
+            padding:8px 15px;
+            flex-wrap:wrap;
+            margin-bottom: 10px;
+            font-size: 15px;
+            border-radius:30px 0px 30px 0px;
+            border:2px solid black;
+            background-color: #1c4a34;
+            color:#fff;
+            cursor:pointer;
+        }
+        .box-conatiner{
+            width:50%;
+        }
+
+        }
+
+        @media screen and (min-width:769px) and (max-width:992px){
+
+            .btn-action-conatiner{
+             flex-wrap:wrap;
+            justify-content: center;
+            width:70%;
+            display:flex;
+            justify-content: space-between;
+           
+           
+           
+        }
+            .btn-action{
+            width:150px;
+            padding:8px 15px;
+            flex-wrap:wrap;
+            margin-bottom: 10px;
+            font-size: 15px;
+            border-radius:30px 0px 30px 0px;
+            border:2px solid black;
+            background-color: #1c4a34;
+            color:#fff;
+            cursor:pointer;
+        }
+
+    }
+
+    
+
+    </style>
+</head>
+<body>
+    <h1 class="heading">String Opertaions</h1>
+
+    <input type="text" id="input"class="box-conatiner" placeholder=" Enter a String Operations">
+   
+    <input type="text" id="output"class="box-conatiner" placeholder="Output of given String Operations">
+
+ <div class="btn-action-conatiner">
+    
+    <button type="button" class="btn-action" onclick="handleTextOps('uppercase')">Upper Case</button>
+
+    <button type="button" class="btn-action" onclick="handleTextOps('lowercase')">Lower Case</button>
+
+    <button type="button" class="btn-action" onclick="handleTextOps('wordcount')" >Word Count</button>
+
+    <button type="button" class="btn-action" onclick="handleTextOps('Charcount')">Character Count</button>
+ </div>
+
+ <script>
+    function handleTextOps(op){
+      
+      const inputElement = document.getElementById('input');
+       const outputElement = document.getElementById('output');
+
+
+ switch(op){
+
+  case "uppercase":
+  outputElement.value = inputElement.value.toUpperCase();
+ break;
+
+ case "lowercase":
+  outputElement.value = inputElement.value.toLowerCase();
+  break;
+
+ case "wordcount":
+  const totalWords = inputElement.value.split(" ").length;
+  outputElement.value = `Total Number World Count is :- ${totalWords}`;
+ break;
+
+ case "Charcount":
+  outputElement.value = `Total Character Count is :- ${inputElement.value.length}`;
+ }
+}
+  
+ </script>
+</body>
+</html>
